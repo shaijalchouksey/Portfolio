@@ -1428,7 +1428,7 @@ footer {
         display: none;
     }
 }
-    /* Basic nav styling */
+   /* Basic nav styling */
     nav {
     display: flex;
     justify-content: space-between;
@@ -1439,7 +1439,7 @@ footer {
 
     .nav-links {
     list-style: none;
-    display: flex;
+    display: flex;      /* desktop pe visible */
     gap: 20px;
     }
 
@@ -1470,64 +1470,24 @@ footer {
     border-radius: 2px;
     }
 
-    /* Mobile view */
+    /* ✅ Mobile view */
     @media (max-width: 768px) {
     .nav-links {
+        display: none;              /* by default hidden */
         position: absolute;
         top: 60px;
-        right: -100%;
+        right: 0;
         background: #222;
         flex-direction: column;
         width: 200px;
         padding: 20px;
-        transition: right 0.3s ease;
     }
 
     .nav-links.active {
-        right: 0;
+        display: flex;              /* show only when active */
     }
 
     .mobile-menu-btn {
-        display: flex;
-    }
-    }
-    /* Default desktop nav */
-    .nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    }
-
-    /* Mobile menu hidden by default */
-    @media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: -100%;
-        flex-direction: column;
-        background: #222;
-        width: 200px;
-        padding: 20px;
-        transition: right 0.3s ease;
-    }
-
-    /* When active class is added */
-    .nav-links.active {
-        right: 0;
-    }
-
-    /* Hamburger button */
-    .mobile-menu-btn {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 5px;
-    }
-
-    .mobile-menu-btn .bar {
-        width: 25px;
-        height: 3px;
-        background: white;
-        border-radius: 2px;
+        display: flex;              /* show hamburger */
     }
     }
